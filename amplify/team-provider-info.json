@@ -1,0 +1,20 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-opalowebv3-dev-174541-authRole",
+            "UnauthRoleArn": "arn:aws:iam::899621802704:role/amplify-opalowebv3-dev-174541-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::899621802704:role/amplify-opalowebv3-dev-174541-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-opalowebv3-dev-174541-deployment",
+            "UnauthRoleName": "amplify-opalowebv3-dev-174541-unauthRole",
+            "StackName": "amplify-opalowebv3-dev-174541",
+            "StackId": "arn:aws:cloudformation:us-east-2:899621802704:stack/amplify-opalowebv3-dev-174541/eee85f50-5cdf-11ea-b59f-027927fac094",
+            "AmplifyAppId": "d24pttn48nmf74"
+        },
+        "categories": {
+            "auth": {
+                "opalowebv3ef048934": {}
+            }
+        }
+    }
+}
