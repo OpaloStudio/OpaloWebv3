@@ -4,10 +4,10 @@ module.exports = {
   pwa: {
     short_name: '<Ópalo> Studio',
     name: '<Ópalo> Studio',
-    themeColor: '#fe694e',
+    themeColor: '#FE5442',
     manifestOptions: {
-      background_color: '#fe694e'
+      background_color: '#FE5442'
     },
-    msTileColor: '#fe694e'
+    msTileColor: '#FE5442'
   }
 }
