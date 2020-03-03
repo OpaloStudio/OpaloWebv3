@@ -24,5 +24,6 @@ export default {
 }
 </script>
 <style lang="sass">
-//
+.rojo
+  color: #FE5442 !important
 </style>
