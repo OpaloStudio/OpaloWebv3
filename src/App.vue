@@ -26,4 +26,7 @@ export default {
 <style lang="sass">
 .rojo
   color: #FE5442 !important
+
+.morado
+  color: #432C47 !important
 </style>

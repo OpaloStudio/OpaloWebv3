@@ -13,23 +13,17 @@
     >
     <v-dialog v-model="dialog" persistent max-width="600px">
       <v-card>
-        <v-card-title>
-          <span class="headline">Formulario Bicla</span>
+        <v-card-title class="gris">
+          <span class="headline morado">Formulario para Proyectos</span>
         </v-card-title>
-        <v-card-text>
+        <v-card-text class="gris">
           <Formulario />
         </v-card-text>
-        <v-card-actions>
+        <v-card-actions class="gris">
           <v-spacer></v-spacer>
-          <v-btn color="blue darken-1" text @click="dialog = false"
-            >Cerrar</v-btn
-          >
-          <v-btn color="blue darken-1" text @click="dialog = false"
-            >Envíar</v-btn
-          >
+          <v-btn color="red" text @click="dialog = false">Cerrar</v-btn>
         </v-card-actions>
       </v-card>
-      <small>*indicates required field</small>
     </v-dialog>
   </div>
 </template>
@@ -53,6 +47,10 @@ export default {
 .home
   background-color: #FE5442
   height: 100vh
+
+.gris
+  background-color: #DDDDDD !important
+
 
 @media only screen and (max-width: 600px)
   #logo
