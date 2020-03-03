@@ -1,6 +1,6 @@
 <template>
   <div class="home d-flex flex-column justify-center align-center">
-    <img width="50%" alt="opalo" id="logo" src="../assets/1.svg" />
+    <img width="50%" alt="opalo" id="logo" src="../assets/opalo.png" />
     <h1 class="white--text text-center titulo mb-3">
       ¿Listos para iniciar la aventura?
     </h1>
