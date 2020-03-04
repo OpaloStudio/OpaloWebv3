@@ -1,7 +1,7 @@
 type formulario
   @model
   @auth(rules: [
-    {allow: groups, mutations: [create, update, delete]}
+    {allow: owner, mutations: [create, update, delete]}
   ])
 {
   id: ID!

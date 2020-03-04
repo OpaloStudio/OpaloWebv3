@@ -4,8 +4,13 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
+import awsExports from './aws-exports'
+import Amplify, * as AmplifyModules from 'aws-amplify'
 
 Vue.config.productionTip = false
+
+Amplify.configure(awsExports)
+Vue.use(AmplifyModules)
 
 new Vue({
   router,
