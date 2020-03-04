@@ -88,7 +88,7 @@
         /></v-avatar>
       </v-btn>
     </v-app-bar>
-    <v-content>
+    <v-content class="contentt">
       <v-container class="fill-height" fluid>
         <v-row align="center" justify="center">
           <router-view />
@@ -183,3 +183,7 @@ export default {
   }
 }
 </script>
+<style lang="sass" scoped>
+.contentt
+  background-color: #DDDDDD
+</style>
