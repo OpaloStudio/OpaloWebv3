@@ -1,5 +1,11 @@
 <template>
   <v-container>
+    <v-snackbar top v-model="snackbar">
+      {{ text }}
+      <v-btn color="pink" text @click="snackbar = false">
+        Close
+      </v-btn>
+    </v-snackbar>
     <v-form ref="form" v-model="valid" lazy-validation>
       <v-row>
         <v-col cols="12" sm="6">
@@ -202,6 +208,8 @@ export default {
     urlManual: '',
     expresion: '',
     colores: '',
+    snackbar: false,
+    text: "Hello, I'm a snackbar",
     marca: '',
     pregResp: []
   }),
@@ -217,29 +225,51 @@ export default {
           { pregunta: 'Nombre', respuesta: this.nombre },
           { pregunta: 'E-mail', respuesta: this.email },
           { pregunta: 'Empresa', respuesta: this.empresa },
-          { pregunta: 'Describe brevemente tu proyecto', respuesta: this.descripcion },
+          {
+            pregunta: 'Describe brevemente tu proyecto',
+            respuesta: this.descripcion
+          },
           { pregunta: 'Misión', respuesta: this.mision },
           { pregunta: 'Visión', respuesta: this.vision },
           { pregunta: 'Url del Manual', respuesta: this.urlManual },
-          { pregunta: 'Describe brevemente la escencia de la marca', respuesta: this.marca },
-          { pregunta: '¿Qué colores y formas representan la marca?', respuesta: this.colores },
+          {
+            pregunta: 'Describe brevemente la escencia de la marca',
+            respuesta: this.marca
+          },
+          {
+            pregunta: '¿Qué colores y formas representan la marca?',
+            respuesta: this.colores
+          },
           { pregunta: '¿Cómo se expresa la marca?', respuesta: this.expresion },
-          { pregunta: 'Funcionalidades de la plataforma', respuesta: this.funcionalidades },
+          {
+            pregunta: 'Funcionalidades de la plataforma',
+            respuesta: this.funcionalidades
+          },
           { pregunta: 'Funcionalidades Futuras', respuesta: this.funcFuturas },
-          { pregunta: 'Información Extra', respuesta: this.infoExtra },
+          { pregunta: 'Información Extra', respuesta: this.infoExtra }
         ]
 
         try {
-          let datos = await API.graphql(graphqlOperation(createFormulario, { input: { pregResp: JSON.stringify(this.pregResp) } }))
+          let datos = await API.graphql(
+            graphqlOperation(createFormulario, {
+              input: { pregResp: JSON.stringify(this.pregResp) }
+            })
+          )
           console.log(datos)
-          alert('Respuesta enviadas')
+          //alert('Respuesta enviadas')
+          this.snackbar = true
+          this.text = 'Respuesta enviadas'
           this.$refs.form.reset()
-        } catch(error) {
+        } catch (error) {
           console.log(error)
           if (error.code === 'Network Error') {
-            alert('Error en la red no fue posible enviar las respuestas')
+            //alert('Error en la red no fue posible enviar las respuestas')
+            this.snackbar = true
+            this.text = 'Error en la red no fue posible enviar las respuestas'
           } else {
-            alert('No fue posible enviar las respuestas')
+            //alert('No fue posible enviar las respuestas')
+            this.snackbar = true
+            this.text = 'No fue posible enviar las respuestas'
           }
         }
       }
