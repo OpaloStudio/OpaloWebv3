@@ -1,49 +1,22 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getTask = `query GetTask($id: ID!) {
-  getTask(id: $id) {
+export const getFormulario = `query GetFormulario($id: ID!) {
+  getFormulario(id: $id) {
     id
-    title
-    description
-    status
+    pregResp
   }
 }
 `;
-export const listTasks = `query ListTasks(
-  $filter: ModelTaskFilterInput
+export const listFormularios = `query ListFormularios(
+  $filter: ModelformularioFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  listTasks(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listFormularios(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      title
-      description
-      status
-    }
-    nextToken
-  }
-}
-`;
-export const getPrivateNote = `query GetPrivateNote($id: ID!) {
-  getPrivateNote(id: $id) {
-    id
-    content
-    owner
-  }
-}
-`;
-export const listPrivateNotes = `query ListPrivateNotes(
-  $filter: ModelPrivateNoteFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listPrivateNotes(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      id
-      content
-      owner
+      pregResp
     }
     nextToken
   }

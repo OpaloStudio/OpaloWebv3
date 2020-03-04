@@ -1,72 +1,33 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createTask = `mutation CreateTask(
-  $input: CreateTaskInput!
-  $condition: ModelTaskConditionInput
+export const createFormulario = `mutation CreateFormulario(
+  $input: CreateFormularioInput!
+  $condition: ModelformularioConditionInput
 ) {
-  createTask(input: $input, condition: $condition) {
+  createFormulario(input: $input, condition: $condition) {
     id
-    title
-    description
-    status
+    pregResp
   }
 }
 `;
-export const updateTask = `mutation UpdateTask(
-  $input: UpdateTaskInput!
-  $condition: ModelTaskConditionInput
+export const updateFormulario = `mutation UpdateFormulario(
+  $input: UpdateFormularioInput!
+  $condition: ModelformularioConditionInput
 ) {
-  updateTask(input: $input, condition: $condition) {
+  updateFormulario(input: $input, condition: $condition) {
     id
-    title
-    description
-    status
+    pregResp
   }
 }
 `;
-export const deleteTask = `mutation DeleteTask(
-  $input: DeleteTaskInput!
-  $condition: ModelTaskConditionInput
+export const deleteFormulario = `mutation DeleteFormulario(
+  $input: DeleteFormularioInput!
+  $condition: ModelformularioConditionInput
 ) {
-  deleteTask(input: $input, condition: $condition) {
+  deleteFormulario(input: $input, condition: $condition) {
     id
-    title
-    description
-    status
-  }
-}
-`;
-export const createPrivateNote = `mutation CreatePrivateNote(
-  $input: CreatePrivateNoteInput!
-  $condition: ModelPrivateNoteConditionInput
-) {
-  createPrivateNote(input: $input, condition: $condition) {
-    id
-    content
-    owner
-  }
-}
-`;
-export const updatePrivateNote = `mutation UpdatePrivateNote(
-  $input: UpdatePrivateNoteInput!
-  $condition: ModelPrivateNoteConditionInput
-) {
-  updatePrivateNote(input: $input, condition: $condition) {
-    id
-    content
-    owner
-  }
-}
-`;
-export const deletePrivateNote = `mutation DeletePrivateNote(
-  $input: DeletePrivateNoteInput!
-  $condition: ModelPrivateNoteConditionInput
-) {
-  deletePrivateNote(input: $input, condition: $condition) {
-    id
-    content
-    owner
+    pregResp
   }
 }
 `;
