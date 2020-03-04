@@ -182,7 +182,7 @@ export default {
     dialog: false,
     drawer: null,
     items: [
-      { icon: 'mdi-contacts', text: 'Contacts' },
+      { icon: 'mdi-contacts', text: 'Formulario' },
       { icon: 'mdi-history', text: 'Frequently contacted' },
       { icon: 'mdi-content-copy', text: 'Duplicates' },
       {
