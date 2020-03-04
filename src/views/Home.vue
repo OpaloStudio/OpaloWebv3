@@ -61,5 +61,7 @@ export default {
 
   .parrafo
     font-size: 16px !important
-    padding: 0px 5px 0px 5px
+
+  .home
+    padding: 0px 15px 0px 15px
 </style>
