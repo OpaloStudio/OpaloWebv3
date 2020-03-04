@@ -5,6 +5,7 @@ export const getFormulario = `query GetFormulario($id: ID!) {
   getFormulario(id: $id) {
     id
     pregResp
+    owner
   }
 }
 `;
@@ -17,6 +18,7 @@ export const listFormularios = `query ListFormularios(
     items {
       id
       pregResp
+      owner
     }
     nextToken
   }

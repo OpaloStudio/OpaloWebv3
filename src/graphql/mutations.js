@@ -8,6 +8,7 @@ export const createFormulario = `mutation CreateFormulario(
   createFormulario(input: $input, condition: $condition) {
     id
     pregResp
+    owner
   }
 }
 `;
@@ -18,6 +19,7 @@ export const updateFormulario = `mutation UpdateFormulario(
   updateFormulario(input: $input, condition: $condition) {
     id
     pregResp
+    owner
   }
 }
 `;
@@ -28,6 +30,7 @@ export const deleteFormulario = `mutation DeleteFormulario(
   deleteFormulario(input: $input, condition: $condition) {
     id
     pregResp
+    owner
   }
 }
 `;
