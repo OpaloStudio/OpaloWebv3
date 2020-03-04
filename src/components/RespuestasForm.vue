@@ -2,7 +2,7 @@
   <v-card width="70vw" class="d-flex flex-column align-center">
     <span class="title ">Ver Respuestas de Formularios</span>
     <v-card-text>
-      <v-expansion-panels inset>
+      <v-expansion-panels inset dark>
         <v-expansion-panel class="expansion" v-for="(item, i) in 5" :key="i">
           <v-expansion-panel-header class="title "
             >Respuestas de formulario (NOMBRE DE EMPRESA
