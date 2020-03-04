@@ -6,6 +6,7 @@ import FormClientes from '../views/FormClientes.vue'
 import PanelControl from '../views/PanelControl.vue'
 import Dashboard from '../components/Dashboard.vue'
 import RespuestasForm from '../components/RespuestasForm.vue'
+import CrearForms from '../components/CrearForms.vue'
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,11 @@ const routes = [
         path: 'respuestasForm',
         name: 'RespuestasForm',
         component: RespuestasForm
+      },
+      {
+        path: 'crearForm',
+        name: 'CrearForms',
+        component: CrearForms
       },
       {
         path: '',
