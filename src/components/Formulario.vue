@@ -4,7 +4,7 @@
       <v-row>
         <v-col cols="12" sm="6">
           <v-text-field
-            v-model="name"
+            v-model="nombre"
             :rules="requerido"
             label="Nombre"
             filled
@@ -37,7 +37,7 @@
       <v-textarea
         filled
         color="#432C47"
-        v-model="descripcionBreve"
+        v-model="descripcion"
         :rules="requerido"
         label="Describe brevemente tu proyecto"
         required
@@ -102,7 +102,7 @@
         <v-textarea
           filled
           color="#432C47"
-          v-model="vision"
+          v-model="marca"
           :rules="requerido"
           label="Describe brevemente la escencia de la marca"
           required
@@ -111,7 +111,7 @@
         <v-textarea
           filled
           color="#432C47"
-          v-model="vision"
+          v-model="colores"
           :rules="requerido"
           label="¿Qué colores y formas representan la marca?"
           required
@@ -120,7 +120,7 @@
         <v-textarea
           filled
           color="#432C47"
-          v-model="vision"
+          v-model="expresion"
           :rules="requerido"
           label="¿Cómo se expresa la marca?"
           required
@@ -130,7 +130,7 @@
       <v-textarea
         filled
         color="#432C47"
-        v-model="vision"
+        v-model="funcionalidades"
         :rules="requerido"
         label="Funcionalidades de la plataforma"
         placeholder="Enlista TODAS las funciones que debe de realizar la plataforma web"
@@ -142,7 +142,7 @@
       <v-textarea
         filled
         color="#432C47"
-        v-model="vision"
+        v-model="funcFuturas"
         :rules="requerido"
         label="Funcionalidades Futuras"
         placeholder="¿Qué otras funcionalidades posiblemente se agreguen al proyecto posteriormente?"
@@ -154,7 +154,7 @@
       <v-textarea
         filled
         color="#432C47"
-        v-model="vision"
+        v-model="infoExtra"
         :rules="requerido"
         label="Información Extra"
         placeholder="¿Hay alguna otra información que consideras importante y no incluimos?"
@@ -168,6 +168,7 @@
           outlined
           class="mr-4"
           @click="validate"
+          :loading="clicked"
         >
           Envíar
         </v-btn>
@@ -176,26 +177,73 @@
   </v-container>
 </template>
 <script>
+import { API, graphqlOperation } from 'aws-amplify'
+import { createFormulario } from '../graphql/mutations'
+
 export default {
   data: () => ({
     valid: true,
-    name: '',
+    clicked: false,
+    nombre: '',
     requerido: [v => !!v || 'Campo obligatório'],
     email: '',
     emailRules: [
       v => !!v || 'E-mail is required',
       v => /.+@.+\..+/.test(v) || 'El correo debe ser válido'
     ],
-    descripcionBreve: '',
+    descripcion: '',
     radios: 'default',
-    empresa: ''
+    empresa: '',
+    funcionalidades: '',
+    funcFuturas: '',
+    infoExtra: '',
+    vision: '',
+    mision: '',
+    urlManual: '',
+    expresion: '',
+    colores: '',
+    marca: '',
+    pregResp: []
   }),
-
+  async created() {
+    let dato = await this.$store.state.isUserSignedIn()
+    console.log(dato)
+  },
   methods: {
-    validate() {
+    async validate() {
+      this.clicked = true
       if (this.$refs.form.validate()) {
-        this.snackbar = true
+        this.pregResp = [
+          { pregunta: 'Nombre', respuesta: this.nombre },
+          { pregunta: 'E-mail', respuesta: this.email },
+          { pregunta: 'Empresa', respuesta: this.empresa },
+          { pregunta: 'Describe brevemente tu proyecto', respuesta: this.descripcion },
+          { pregunta: 'Misión', respuesta: this.mision },
+          { pregunta: 'Visión', respuesta: this.vision },
+          { pregunta: 'Url del Manual', respuesta: this.urlManual },
+          { pregunta: 'Describe brevemente la escencia de la marca', respuesta: this.marca },
+          { pregunta: '¿Qué colores y formas representan la marca?', respuesta: this.colores },
+          { pregunta: '¿Cómo se expresa la marca?', respuesta: this.expresion },
+          { pregunta: 'Funcionalidades de la plataforma', respuesta: this.funcionalidades },
+          { pregunta: 'Funcionalidades Futuras', respuesta: this.funcFuturas },
+          { pregunta: 'Información Extra', respuesta: this.infoExtra },
+        ]
+
+        try {
+          let datos = await API.graphql(graphqlOperation(createFormulario, { input: { pregResp: JSON.stringify(this.pregResp) } }))
+          console.log(datos)
+          alert('Respuesta enviadas')
+          this.$refs.form.reset()
+        } catch(error) {
+          console.log(error)
+          if (error.code === 'Network Error') {
+            alert('Error en la red no fue posible enviar las respuestas')
+          } else {
+            alert('No fue posible enviar las respuestas')
+          }
+        }
       }
+      this.clicked = false
     },
     reset() {
       this.$refs.form.reset()
