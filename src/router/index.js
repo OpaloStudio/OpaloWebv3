@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Welcome from '../views/Welcome.vue'
+import Portafolio from '../views/Portafolio.vue'
 import FormClientes from '../views/FormClientes.vue'
 import PanelControl from '../views/PanelControl.vue'
 import Dashboard from '../components/Dashboard.vue'
@@ -20,6 +21,11 @@ const routes = [
     path: '/welcome',
     name: 'Welcome',
     component: Welcome
+  },
+  {
+    path: '/portafolio',
+    name: 'Portafolio',
+    component: Portafolio
   },
   {
     path: '/formularioClientes',

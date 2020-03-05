@@ -29,4 +29,7 @@ export default {
 
 .morado
   color: #432C47 !important
+
+.verde
+  color: #009962 !important
 </style>
