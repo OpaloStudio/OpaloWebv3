@@ -176,6 +176,9 @@ export default {
       }
     ]
   }),
+  async created () {
+    await this.$store.state.isUserSignedIn()
+  },
   methods: {
     ir(lugar) {
       this.$router.push(lugar)
