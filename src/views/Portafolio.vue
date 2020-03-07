@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <Carousel />
+  <div class="portafolio">
+    <Carousel class="mt-10" />
   </div>
 </template>
 <script>
@@ -14,3 +14,8 @@ export default {
   }
 }
 </script>
+<style lang="sass" scoped>
+.portafolio
+    background-color: #DDDDDD
+    height: 100vh !important
+</style>

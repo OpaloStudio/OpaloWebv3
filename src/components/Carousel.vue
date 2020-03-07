@@ -1,3 +1,5 @@
 <template>
-  <h1>carousel</h1>
+  <v-container>
+    <v-img></v-img>
+  </v-container>
 </template>
