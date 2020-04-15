@@ -247,7 +247,7 @@ export default {
     text: "Hello, I'm a snackbar",
     marca: '',
     pregResp: [],
-    exito: true
+    exito: false
   }),
   async created() {
     let dato = await this.$store.state.isUserSignedIn()

@@ -14,7 +14,7 @@
       Mediante este formulario, lograremos comprender mejor la esencia de tu
       proyecto y así podremos comenzar a trabajar en él.
     </p>
-    <v-btn @click="dialog = true" outlined color="white"
+    <v-btn class="mb-5" @click="dialog = true" outlined color="white"
       >Contestar Formulario</v-btn
     >
     <v-dialog v-model="dialog" persistent max-width="600px">
