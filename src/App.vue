@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <Barra />
+    <Barra v-if="algo" />
     <transition-page>
       <router-view />
     </transition-page>

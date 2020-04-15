@@ -38,6 +38,7 @@
         filled
         color="#432C47"
         required
+        v-if="false"
       ></v-text-field>
 
       <v-textarea
@@ -54,7 +55,8 @@
         color="#432C47"
         v-model="mision"
         :rules="requerido"
-        label="Misión"
+        label="¿Cuál será el uso de la pieza?"
+        placeholder="Estará encendida todo el tiempo, solo se usará casualmente, etc..."
         required
       ></v-textarea>
 
@@ -63,11 +65,31 @@
         color="#432C47"
         v-model="vision"
         :rules="requerido"
-        label="Visión"
+        label="¿Qué tipo de animaciones o colores te interesan?"
+        placeholder="Podemos diseñar animaciones con diferentes colores y patrones"
         required
       ></v-textarea>
 
-      <v-radio-group v-model="radios">
+      <v-textarea
+        filled
+        color="#432C47"
+        v-model="funcionalidades"
+        :rules="requerido"
+        label="¿Cómo te gustaría controlar tu pieza?"
+        placeholder="Dispositivo movil, pantalla en la pared, control remoto, etc..."
+        required
+      ></v-textarea>
+
+      <v-text-field
+        v-model="empresa"
+        :rules="requerido"
+        label="¿Cuál es tu presupuesto para este proyecto?"
+        filled
+        color="#432C47"
+        required
+      ></v-text-field>
+
+      <v-radio-group v-model="radios" v-if="false">
         <template v-slot:label>
           <div>¿Cuenta con manual de usuario?</div>
         </template>
@@ -115,6 +137,7 @@
         ></v-textarea>
 
         <v-textarea
+          v-if="false"
           filled
           color="#432C47"
           v-model="colores"
@@ -124,6 +147,7 @@
         ></v-textarea>
 
         <v-textarea
+          v-if="false"
           filled
           color="#432C47"
           v-model="expresion"
@@ -134,6 +158,7 @@
       </div>
 
       <v-textarea
+        v-if="false"
         filled
         color="#432C47"
         v-model="funcionalidades"
@@ -146,6 +171,7 @@
       ></v-textarea>
 
       <v-textarea
+        v-if="false"
         filled
         color="#432C47"
         v-model="funcFuturas"
@@ -158,6 +184,7 @@
       ></v-textarea>
 
       <v-textarea
+        v-if="false"
         filled
         color="#432C47"
         v-model="infoExtra"
