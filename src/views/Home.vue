@@ -19,9 +19,6 @@
     >
     <v-dialog v-model="dialog" persistent max-width="600px">
       <v-card>
-        <v-card-title class="gris">
-          <span class="headline morado">Formulario para Proyecto</span>
-        </v-card-title>
         <v-card-text class="gris">
           <Formulario />
         </v-card-text>

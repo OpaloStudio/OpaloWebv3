@@ -6,7 +6,15 @@
         Close
       </v-btn>
     </v-snackbar>
-    <v-form ref="form" v-model="valid" lazy-validation>
+    <v-card-title v-if="exito === false" class="gris">
+      <span class="headline morado">Formulario para Proyecto</span>
+    </v-card-title>
+    <h1 class="mt-5 text-center" v-if="exito === true">
+      Gracias por contestar nuestro formulario.<br /><br />
+      Mientras lo revisamos puedes explorar nuestra página web:<br /><br />
+      <a href="https://master.d2ukjpnazcwlxy.amplifyapp.com/">Punto Ágora</a>
+    </h1>
+    <v-form v-if="exito === false" ref="form" v-model="valid" lazy-validation>
       <v-row>
         <v-col cols="12" sm="6">
           <v-text-field
@@ -238,7 +246,8 @@ export default {
     snackbar: false,
     text: "Hello, I'm a snackbar",
     marca: '',
-    pregResp: []
+    pregResp: [],
+    exito: true
   }),
   async created() {
     let dato = await this.$store.state.isUserSignedIn()
@@ -287,6 +296,7 @@ export default {
           this.snackbar = true
           this.text = 'Respuesta enviadas'
           this.$refs.form.reset()
+          this.exito = true
         } catch (error) {
           console.log(error)
           if (error.code === 'Network Error') {
