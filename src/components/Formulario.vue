@@ -52,19 +52,19 @@
       <v-textarea
         filled
         color="#432C47"
-        v-model="descripcion"
+        v-model="mision"
         :rules="requerido"
-        label="Describe brevemente tu proyecto"
+        label="¿Cuál será el uso de la pieza?"
+        placeholder="Estará encendida todo el tiempo, solo se usará casualmente, etc..."
         required
       ></v-textarea>
 
       <v-textarea
         filled
         color="#432C47"
-        v-model="mision"
+        v-model="descripcion"
         :rules="requerido"
-        label="¿Cuál será el uso de la pieza?"
-        placeholder="Estará encendida todo el tiempo, solo se usará casualmente, etc..."
+        label="¿Qué emociones quieres evocar con la pieza?"
         required
       ></v-textarea>
 
@@ -87,15 +87,6 @@
         placeholder="Dispositivo movil, pantalla en la pared, control remoto, etc..."
         required
       ></v-textarea>
-
-      <v-text-field
-        v-model="empresa"
-        :rules="requerido"
-        label="¿Cuál es tu presupuesto para este proyecto?"
-        filled
-        color="#432C47"
-        required
-      ></v-text-field>
 
       <v-radio-group v-model="radios" v-if="false">
         <template v-slot:label>
